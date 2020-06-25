@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: yoke-event
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+
+
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: '{cipher}98052f6f3c5fc384666482cd9e6a3faf8f4ffe182d55e42ebeb4d0e674d91ac6'
+
+server:
+  port: 8083
+
+yoke:
+  notify:
+    url: http://localhost:8082/event
