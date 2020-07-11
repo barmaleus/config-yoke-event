@@ -1,6 +1,8 @@
 spring:
   application:
     name: yoke-event
+  profiles:
+    active: docker
 
   jpa:
     database: POSTGRESQL
@@ -12,7 +14,7 @@ spring:
 
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://db-postgres:5432/postgres
     username: postgres
     password: '{cipher}98052f6f3c5fc384666482cd9e6a3faf8f4ffe182d55e42ebeb4d0e674d91ac6'
 
@@ -21,4 +23,4 @@ server:
 
 yoke:
   notify:
-    url: http://localhost:8082/event
+    url: http://YOKE-NOTIFY/event
